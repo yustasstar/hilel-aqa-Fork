@@ -5,6 +5,3 @@
 bin/
 obj/
 playwright\.auth
-
-
-
