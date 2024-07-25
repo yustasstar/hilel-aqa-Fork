@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlaywrigthSpecFlow")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2193872f3c67050dbc29eec18b0475da703485c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59f9f7e2eddb3599bb855999089262a39aca6007")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlaywrigthSpecFlow")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlaywrigthSpecFlow")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
