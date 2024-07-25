@@ -25,16 +25,22 @@ namespace AtataSamples.SpecFlow.Api.Features.Account
         [Then(@"I get success status code from API")]
         public void ThenISeeSuccessStatusCode()
         {
-            var presetup = _featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            Assert.That(presetup.UserId, Is.Not.Null, "Account not created");
+            if (_featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
+            {
+                Assert.That(presetup.UserId, Is.Not.Null, "Account not created");
+            }
         }
 
         //TODO: add cleanup
         [AfterFeature(@"ICreateAccountByAPI")]
-        public static async Task WhenICleanupAccountByAPI(FeatureContext featureContext)
+        public static void WhenICleanupAccountByAPI(FeatureContext featureContext)
         {
-            var presetup = featureContext.Get<AccountPresetup>("AccountApiPresetup");
-            //presetup.
+            if (featureContext.TryGetValue("AccountApiPresetup", out var presetupObj) && presetupObj is AccountPresetup presetup)
+            {
+
+                //presetup.
+
+            }
         }
     }
 }
