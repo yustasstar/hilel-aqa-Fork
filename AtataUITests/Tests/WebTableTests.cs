@@ -6,8 +6,10 @@ using TechTalk.SpecFlow;
 
 namespace AtataUITests.Tests
 {
+    //[Category("WebTables")]
     public sealed class WebTableTests : UITestFixture
     {
+
         [Test, Retry(2)]
         public void VerifyTableHeaders()
         {
