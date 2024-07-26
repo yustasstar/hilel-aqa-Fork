@@ -2,9 +2,9 @@
 
 public class Person
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public int Age { get; set; }
-    public string City { get; set; }
+    public string? City { get; set; }
 }
 
 [TestFixture]
@@ -271,11 +271,7 @@ public class LinqTests
 
         var cities = new List<string> { "Seattle", "Portland", "Phoenix" };
 
-        var result = people.Join(
-            cities,
-            person => person.City,
-            city => city,
-            (person, city) => person).ToList();
+        var result = people.Join(cities, person => person.City, city => city, (person, city) => person).ToList();
 
         Assert.Multiple(() =>
         {
