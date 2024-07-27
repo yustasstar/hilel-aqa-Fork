@@ -1,4 +1,6 @@
-﻿namespace Lesson21;
+﻿using Microsoft.VisualBasic;
+
+namespace Lesson21;
 
 public enum TestDataAge
 {
@@ -49,14 +51,17 @@ public class EnumHomework
         var listOfString = list.ToList();
         var enumValues = Enum.GetNames(typeof(TestDataAge));
 
-        // Calculate the number of strings present in the enum
+        // for the first test case { "Child", "Baby", "Teenager", "Eldery", "Adult" } there are only 3 (out of 5) strings "Child", "Teenager", "Adult" are present in TestDataAge
         var numberOfStringsWhichPresentInEnum = listOfString.Count(str => enumValues.Contains(str));
-        // Calculate the number of strings not present in the enum
+
+        // "Baby" and "Eldery" are not present in TestDataAge, so numberOfStringsWhichAreNotPresentInEnum is 2
         var numberOfStringsWhichAreNotPresentInEnum = listOfString.Count(str => !enumValues.Contains(str));
-        // Determine if all strings are present in the enum
-        var areAllPresent = numberOfStringsWhichAreNotPresentInEnum == 0;
-        // Determine if there are extra elements not present in the enum
-        var areExtraElements = numberOfStringsWhichAreNotPresentInEnum > 0;
+
+        // for the first case not all strings are present in TestDataAge (only 3 out of 5 are present)), so expression result should be false
+        bool areAllPresent = listOfString.All(str => enumValues.Contains(str));
+
+        // for the first case, yes, there are 2 extra elements "Baby" and "Eldery", so result is true
+        bool areExtraElements = listOfString.Any(str => !enumValues.Contains(str));
 
         Assert.Multiple(() =>
         {
@@ -65,7 +70,6 @@ public class EnumHomework
             Assert.That(areAllPresent, Is.EqualTo(areAllPresentExpected));
             Assert.That(areExtraElements, Is.EqualTo(areExtraElementsExpected));
         });
-
     }
 
     public static object[] StringlEmentsArePresentInEnumCases =
