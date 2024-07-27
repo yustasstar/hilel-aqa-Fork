@@ -26,7 +26,9 @@ public class EnumHomework
     public void SomeIntCorrespondsToSomeTestDataAgeValue()
     {
         var listOfInt = new List<int>() { 5, 14, 15 };
-        var isAnyIntCorrespondsToTestDataAge = listOfInt.Any(x => x == (int)TestDataAge.Teenager);
+        var testDataAgeValues = Enum.GetValues(typeof(TestDataAge)).Cast<int>();
+        bool isAnyIntCorrespondsToTestDataAge = listOfInt.Any(x => testDataAgeValues.Contains(x));
+
         Assert.That(isAnyIntCorrespondsToTestDataAge, Is.True);
     }
 
