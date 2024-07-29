@@ -84,7 +84,7 @@ namespace NUnitTests.Homework
 
         [Test]
         [Order(5)]
-        public void LowChargeAlert()
+        public void LowChargeAlert2()
         {
             int charge = 8;
             Charge = charge;
