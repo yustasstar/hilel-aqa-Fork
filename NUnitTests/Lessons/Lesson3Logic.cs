@@ -41,7 +41,7 @@
         public void GetSpeed()
         {
             //TODO if acceleration is more than 0 set speed as current speed
-            if (Acceleration > 0)
+            if (Acceleration>0)
             {
 
                 //Speed = CurrentSpeed;
@@ -51,7 +51,7 @@
         public void GetDeceleration()
         {
             //TODO if acceleration is more than 0 set deceleration as CurrentSpeed - CurrentDeceleration
-            if (Acceleration > 0)
+            if (Acceleration>0)
             {
 
                 //Deceleration = CurrentSpeed - CurrentDeceleration;
