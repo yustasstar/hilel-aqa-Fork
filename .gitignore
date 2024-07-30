@@ -4,8 +4,4 @@
 
 bin/
 obj/
-
-.AtataSamples.SpecFlow/obj/
-.AtataSamples.SpecFlow/bin/
-
 playwright\.auth
