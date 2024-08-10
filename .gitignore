@@ -1,6 +1,9 @@
-﻿.vs/
+.vs/
 .idea/
 .vscode/
 
+AtataUITest2/
+PlaywrightTestProject1/
 bin/
 obj/
+playwright\.auth
