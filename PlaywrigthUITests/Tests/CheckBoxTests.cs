@@ -16,7 +16,7 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupCheckBoxPage()
         {
-            _CheckBoxPage = new CheckBoxPage(page);
+            _CheckBoxPage = new CheckBoxPage(Page);
         }
 
         [Test, Retry(2)]

@@ -10,7 +10,7 @@ namespace PlaywrigthUITests.Tests
         private WebTablesPage _WebTablesPage;
 
         [SetUp]
-        public void SetupDemoQAPage() => _WebTablesPage = new WebTablesPage(page);
+        public void SetupDemoQAPage() => _WebTablesPage = new WebTablesPage(Page);
 
         [Test, Retry(2)]
         [Description("'Web Tables' H1 and table should be visible")]

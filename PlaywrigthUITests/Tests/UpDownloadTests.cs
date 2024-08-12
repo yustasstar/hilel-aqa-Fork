@@ -11,7 +11,7 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupDemoQAPage()
         {
-            _UpDownloadPage = new UpDownloadPage(page);
+            _UpDownloadPage = new UpDownloadPage(Page);
         }
 
         [Test, Retry(2), Description("Donwload file verify file updated")]
