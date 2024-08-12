@@ -8,7 +8,7 @@ namespace PlaywrigthUITests.Tests
         private DynamicPropertiesPage _DynamicPropertiesPage;
 
         #region TEST DATA:
-        //page:
+        //Page:
         private readonly string testPageUrl = "https://demoqa.com/dynamic-properties";
         private readonly string testPageH1 = "Dynamic Properties";
         //Labels:
@@ -18,7 +18,7 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupDemoQAPage()
         {
-            _DynamicPropertiesPage = new DynamicPropertiesPage(page);
+            _DynamicPropertiesPage = new DynamicPropertiesPage(Page);
         }
 
         [Test, Retry(2)]
@@ -29,7 +29,7 @@ namespace PlaywrigthUITests.Tests
             await _DynamicPropertiesPage.IsPageH1Visible(testPageH1);
         }
 
-        [Test, Description("Verify ColorChange button have color black at page init and after 5 sec color red")]
+        [Test, Description("Verify ColorChange button have color black at Page init and after 5 sec color red")]
         public async Task VerifyDynamicColorChange()
         {
             await _DynamicPropertiesPage.GoToURL(testPageUrl);

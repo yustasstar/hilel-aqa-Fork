@@ -25,7 +25,7 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupTextBoxPage()
         {
-            _TextBoxPage = new TextBoxPage(page);
+            _TextBoxPage = new TextBoxPage(Page);
         }
 
         [Test]

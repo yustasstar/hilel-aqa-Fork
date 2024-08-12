@@ -6,31 +6,23 @@ namespace PlaywrigthUITests
     [TestFixture]
     internal class UITestFixture
     {
-        public IPage page { get; private set; }
-        private IBrowser browser;
+        public IPage Page { get; private set; }
+        private IBrowser Browser;
 
         [SetUp]
         public async Task Setup()
         {
             var playwrightDriver = await Playwright.CreateAsync();
-            browser = await playwrightDriver.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+            Browser = await playwrightDriver.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false, // Set to false to run the browser in non-headless mode
-                Channel = "chrome",
-                Args = new List<string>
-                {
-                    "--incognito",
-                    "--fullscreen",
-                    "--start-maximized",
-                    "--window-position=0,0",
-                    "--window-size=1920,1080"
-                }
+                Headless = false
             });
-            var context = await browser.NewContextAsync(new BrowserNewContextOptions
+            var context = await Browser.NewContextAsync(new BrowserNewContextOptions
             {
-                ViewportSize = new ViewportSize { Width = 1900, Height = 970 },
+                ViewportSize = new ViewportSize { Width = 1890, Height = 945 },
             });
-            page = await context.NewPageAsync();
+
+            Page = await context.NewPageAsync();
         }
 
         [OneTimeSetUp]
@@ -38,14 +30,8 @@ namespace PlaywrigthUITests
         [TearDown]
         public async Task Teardown()
         {
-            if (page != null)
-            {
-                await page.CloseAsync();
-            }
-            if (browser != null)
-            {
-                await browser.CloseAsync();
-            }
+            if (Page != null) { await Page.CloseAsync(); }
+            if (Browser != null) { await Browser.CloseAsync(); }
         }
     }
 }

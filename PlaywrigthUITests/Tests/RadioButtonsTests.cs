@@ -26,7 +26,7 @@ namespace PlaywrigthUITests.Tests
         [SetUp]
         public void SetupRadioButtonPage()
         {
-            _RadioButtonPage = new RadioButtonPage(page);
+            _RadioButtonPage = new RadioButtonPage(Page);
         }
 
 
@@ -76,7 +76,7 @@ namespace PlaywrigthUITests.Tests
 
         //Homework Lesson_9
         //TODO need to be finished: 
-        //TC-5 : Verify text 'You have selected Impressive' is not visible after page refresh
+        //TC-5 : Verify text 'You have selected Impressive' is not visible after Page refresh
 
     }
 }

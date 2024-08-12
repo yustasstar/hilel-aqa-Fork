@@ -6,7 +6,7 @@ namespace PlaywrigthUITests.PageObjects
     {
         private readonly IPage page = page;
 
-        //page:
+        //Page:
         public async Task GoToURL(string testPageUrl)
         {
             await page.GotoAsync(testPageUrl);
