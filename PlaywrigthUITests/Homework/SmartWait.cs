@@ -1,5 +1,4 @@
 ﻿using Microsoft.Playwright;
-using NUnit.Framework;
 
 namespace PlaywrigthUITests.Homework
 {
