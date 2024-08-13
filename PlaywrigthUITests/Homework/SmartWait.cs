@@ -17,9 +17,7 @@ namespace PlaywrigthUITests.Homework
             await Page.GetByRole(AriaRole.Button, new() { Name = "Color", Exact = true }).ClickAsync();
             var titelsBefore = await Page.Locator(".product-card__title").AllInnerTextsAsync();
             await Page.GetByLabel("Filter for Blue").ClickAsync();
-            
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
-
+            await Page.WaitForSelectorAsync("//h1[contains(text(), 'Womens Blue Shoes')]");
             var titelsAfter = await Page.Locator(".product-card__title").AllInnerTextsAsync();
 
             //Assert
@@ -34,15 +32,16 @@ namespace PlaywrigthUITests.Homework
 
             //Act
             var titelsBefore = await Page.Locator(".item_name").AllInnerTextsAsync();
-            await Page.Locator("li").Filter(new() { HasText = "Кросівки" }).Locator("label").ClickAsync();
-
-            await Page.WaitForTimeoutAsync(5000); // Replace this line with smart waiting
-
+            await Page.Locator("li").Filter(new() { HasText = "Шкарпетки" }).Locator("label").ClickAsync();
+            await Page.WaitForSelectorAsync("//h1[contains(text(), 'Жінки Шкарпетки')]");
             var titelsAfter = await Page.Locator(".item_name").AllInnerTextsAsync();
 
             //Assert
-            Assert.That(titelsBefore.First().ToLower(), Does.Not.Contain("кросівки"));
-            Assert.That(titelsAfter.First().ToLower(), Does.Contain("кросівки"));
+            Assert.Multiple(() =>
+            {
+                Assert.That(titelsBefore.First().ToLower(), Does.Not.Contain("шкарпетки"));
+                Assert.That(titelsAfter.First().ToLower(), Does.Contain("шкарпетки"));
+            });
         }
     }
 }
