@@ -1,5 +1,5 @@
-using System.Text.RegularExpressions;
 using Microsoft.Playwright;
+using System;
 
 namespace HW24_Evershop
 {
@@ -21,19 +21,15 @@ namespace HW24_Evershop
             });
 
             await Page.GotoAsync("https://demo.evershop.io/");
-            await Page.WaitForTimeoutAsync(1500);
             await Page.GetByRole(AriaRole.Link, new() { Name = "Men", Exact = true }).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
             await Page.GetByRole(AriaRole.Link, new() { Name = "Nike air zoom pegasus" }).Nth(3).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
+            await Page.WaitForTimeoutAsync(1000);
             await Page.GetByRole(AriaRole.Link, new() { Name = "M", Exact = true }).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
+            await Page.WaitForSelectorAsync(".selected");
             await Page.GetByRole(AriaRole.Link, new() { Name = "Red" }).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
+            await Page.WaitForTimeoutAsync(500);
             await Page.GetByRole(AriaRole.Button, new() { Name = "ADD TO CART" }).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
             await Page.GetByRole(AriaRole.Link, new() { Name = "VIEW CART (1)" }).ClickAsync();
-            await Page.WaitForTimeoutAsync(1500);
             await Page.GetByRole(AriaRole.Link, new() { Name = "CHECKOUT" }).ClickAsync();
         }
     }
