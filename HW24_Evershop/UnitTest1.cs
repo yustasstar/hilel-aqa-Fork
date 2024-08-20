@@ -31,6 +31,12 @@ namespace HW24_Evershop
             await Page.GetByRole(AriaRole.Button, new() { Name = "ADD TO CART" }).ClickAsync();
             await Page.GetByRole(AriaRole.Link, new() { Name = "VIEW CART (1)" }).ClickAsync();
             await Page.GetByRole(AriaRole.Link, new() { Name = "CHECKOUT" }).ClickAsync();
+
+            
+            await Assertions.Expect(Page.GetByText("Nike air zoom pegasus")).ToBeVisibleAsync();
+            await Assertions.Expect(Page.GetByText("M", new() { Exact = true })).ToBeVisibleAsync();
+            await Assertions.Expect(Page.GetByText("Red")).ToBeVisibleAsync();
+            await Assertions.Expect(Page.GetByRole(AriaRole.Img, new() { Name = "Nike air zoom pegasus" })).ToBeVisibleAsync();
         }
     }
 }
