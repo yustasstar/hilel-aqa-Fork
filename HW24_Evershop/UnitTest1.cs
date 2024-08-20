@@ -7,25 +7,34 @@ namespace HW24_Evershop
     [TestFixture]
     public class ExampleTest : UITestFixture
     {
-        [Test]
-        public async Task HasTitle()
-        {
-            await Page.GotoAsync("https://playwright.dev");
 
-            // Expect a title "to contain" a substring.
-            await Assertions.Expect(Page).ToHaveTitleAsync(new Regex("Playwright"));
+        [Test]
+        public async Task CheckoutWorkflow()
+        {
+            await Page.APIRequest.PostAsync("https://demo.evershop.io//customer/login", new()
+            {
+                DataObject = new Dictionary<string, object>
+                {
+                    {"email", "TestEmail@mail.test" },
+                    {"password", "P@ssword123" }
+                }
+            });
+
+            await Page.GotoAsync("https://demo.evershop.io/");
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "Men", Exact = true }).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "Nike air zoom pegasus" }).Nth(3).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "M", Exact = true }).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "Red" }).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Button, new() { Name = "ADD TO CART" }).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "VIEW CART (1)" }).ClickAsync();
+            await Page.WaitForTimeoutAsync(1500);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "CHECKOUT" }).ClickAsync();
         }
-
-        [Test]
-        public async Task GetStartedLink()
-        {
-            await Page.GotoAsync("https://playwright.dev");
-
-            // Click the get started link.
-            await Page.GetByRole(AriaRole.Link, new() { Name = "Get started" }).ClickAsync();
-
-            // Expects page to have a heading with the name of Installation.
-            await Assertions.Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Installation" })).ToBeVisibleAsync();
-        } 
     }
 }

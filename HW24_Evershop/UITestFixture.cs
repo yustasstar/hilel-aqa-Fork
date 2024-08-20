@@ -4,11 +4,9 @@ namespace HW24_Evershop
 {
     public class UITestFixture
     {
-		public static IBrowserContext? Context { get; private set; }
-        public static IPage? Page { get; private set; }
-        private static IBrowser? Browser;
-        //internal static string baseUrl = "https://solartechnology.com.ua/";
-
+        public IPage? Page { get; private set; }
+        private IBrowser? Browser;
+        public IBrowserContext? Context { get; private set; }
 
         [SetUp]
         public async Task Setup()
@@ -33,8 +31,7 @@ namespace HW24_Evershop
             });
 
             Page = await Context.NewPageAsync();
-            Page.SetDefaultTimeout(15000);
-            //Page.PauseAsync();
+            Page.SetDefaultTimeout(10000);
         }
 
         [TearDown]
