@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtataSpecFlow", "AtataSpecF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaywrigthSpecFlow", "PlaywrigthSpecFlow\PlaywrigthSpecFlow.csproj", "{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumWithApi", "SeleniumWithApi\SeleniumWithApi.csproj", "{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E7EA8EC-A5D0-4038-854F-D0EFC8F8DE74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A04901D-58F9-4BC6-83CB-BE0EB27160BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
