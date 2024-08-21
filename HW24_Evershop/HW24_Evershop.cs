@@ -5,7 +5,7 @@ namespace HW24_Evershop
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
-    public class W24_Evershop : UITestFixture
+    public class HW24_Evershop : UITestFixture
     {
 
         [Test]
