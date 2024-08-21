@@ -1,7 +1,7 @@
 using Microsoft.Playwright;
 using System;
 
-namespace HW24_Evershop
+namespace HomeWork
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]

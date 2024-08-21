@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace HW24_Evershop
+namespace HomeWork
 {
     public class UITestFixture
     {
