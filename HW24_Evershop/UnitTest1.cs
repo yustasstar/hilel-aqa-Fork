@@ -29,7 +29,7 @@ namespace HW24_Evershop
             await Page.GetByRole(AriaRole.Link, new() { Name = "Red" }).ClickAsync();
             await Page.WaitForTimeoutAsync(500);
             await Page.GetByRole(AriaRole.Button, new() { Name = "ADD TO CART" }).ClickAsync();
-            await Page.GetByRole(AriaRole.Link, new() { Name = "VIEW CART (1)" }).ClickAsync();
+            await Page.GetByRole(AriaRole.Link, new() { Name = "VIEW CART" }).ClickAsync();
             await Page.GetByRole(AriaRole.Link, new() { Name = "CHECKOUT" }).ClickAsync();
 
             
