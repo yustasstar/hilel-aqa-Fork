@@ -6,6 +6,7 @@ AtataUITest2/
 PlaywrightTestProject1/
 bin/
 obj/
+TestResults/
 .AtataSamples.SpecFlow.sln
 .AtataSamples.SpecFlow/obj/
 .AtataSamples.SpecFlow/bin/
