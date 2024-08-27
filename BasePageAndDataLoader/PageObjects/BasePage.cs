@@ -6,7 +6,6 @@ namespace SolarTechnology.PageObjects
 	{
         internal IPage Page;
 
-
         public BasePage(IPage page)
         {
             Page = page;
