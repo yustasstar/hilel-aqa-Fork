@@ -14,7 +14,7 @@ namespace HomeWork
             var playwrightDriver = await Playwright.CreateAsync();
             Browser = await playwrightDriver.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = false
+                Headless = true
             });
 
             Context = await Browser.NewContextAsync(new BrowserNewContextOptions
