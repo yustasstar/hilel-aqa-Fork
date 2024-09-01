@@ -6,4 +6,5 @@ AtataUITest2/
 PlaywrightTestProject1/
 bin/
 obj/
+TestResults/
 playwright\.auth
