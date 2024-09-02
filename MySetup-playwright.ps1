@@ -35,27 +35,21 @@ namespace $ProjectName
 {
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
-    public class ExampleTest : UITestFixture
+    public class FirstTest : UITestFixture
     {
         [Test]
         public async Task HasTitle()
         {
-            await Page.GotoAsync("https://playwright.dev");
-
-            // Expect a title "to contain" a substring.
-            await Assertions.Expect(Page).ToHaveTitleAsync(new Regex("Playwright"));
+            await Page.GotoAsync(baseUrl);
+            await Assertions.Expect(Page).ToHaveTitleAsync(new Regex("Automation Exercise"));
         }
 
         [Test]
-        public async Task GetStartedLink()
+        public async Task GotoLogIn()
         {
-            await Page.GotoAsync("https://playwright.dev");
-
-            // Click the get started link.
-            await Page.GetByRole(AriaRole.Link, new() { Name = "Get started" }).ClickAsync();
-
-            // Expects page to have a heading with the name of Installation.
-            await Assertions.Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Installation" })).ToBeVisibleAsync();
+            await Page.GotoAsync(baseUrl);
+            await Page.GetByRole(AriaRole.Link, new() { Name = "Signup / Login" }).ClickAsync();
+            await Assertions.Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Login to your account" })).ToBeVisibleAsync();
         } 
     }
 }
@@ -71,7 +65,7 @@ namespace $ProjectName
 		public static IBrowserContext? Context { get; private set; }
         public static IPage? Page { get; private set; }
         private static IBrowser? Browser;
-        //internal static string baseUrl = "https://solartechnology.com.ua/";
+        internal static string baseUrl = "https://automationexercise.com/";
 
 
         [SetUp]
