@@ -62,11 +62,10 @@ namespace $ProjectName
 {
     public class UITestFixture
     {
-		public static IBrowserContext? Context { get; private set; }
-        public static IPage? Page { get; private set; }
         private static IBrowser? Browser;
+        public static IBrowserContext? Context { get; private set; }
+        public static IPage? Page { get; private set; }
         internal static string baseUrl = "https://automationexercise.com/";
-
 
         [SetUp]
         public async Task Setup()
